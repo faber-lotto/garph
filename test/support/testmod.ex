@@ -29,6 +29,11 @@ defmodule Testmod do
     evaluate @play_tennis, [outlook, humidity, wind, temperature]
   end
 
+  def export_dot do
+    {:ok, file} = File.open "play_tennis.dot", [:write]
+    IO.binwrite file, Testmod.to_dot(@play_tennis)
+  end
+
   def outlook(outlook, humidity, wind, temperature) do
     cond do
       outlook >= 0 && outlook <= 0.25 -> {:rainy, [wind]}
