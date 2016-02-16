@@ -1,6 +1,6 @@
 # Garph
 
-**TODO: Add description**
+![image](https://cdn.rawgit.com/ftaebi/garph/master/play_tennis.svg)
 
 ## Installation
 
@@ -10,10 +10,4 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 
         def deps do
           [{:garph, "~> 0.0.1"}]
-        end
-
-  2. Ensure garph is started before your application:
-
-        def application do
-          [applications: [:garph]]
         end

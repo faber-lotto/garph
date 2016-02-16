@@ -30,7 +30,8 @@ defmodule Garph do
             if dest do
               "  node_#{method}_#{edge} -> node_#{dest}_label"
             else
-              "  node_#{method}_#{edge} -> node_#{method}_#{edge}_end; node_#{method}_#{edge}_end [label = end];"
+              end_node = "node_#{method}_#{edge}_end"
+              "  node_#{method}_#{edge} -> #{end_node}; #{end_node} [label = end];"
             end
           end) 
         end)
