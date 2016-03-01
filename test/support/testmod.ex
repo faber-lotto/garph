@@ -5,23 +5,23 @@ defmodule Testmod do
                  outlook:
                    [
                      rainy: :wind,
-                     overcast: nil,
+                     overcast: "yes",
                      sunny: :humidity
                    ],
                  humidity:
                    [
-                     normal: nil,
+                     normal: "yes",
                      high: :temperature
                    ],
                  wind:
                    [
-                     strong: nil,
-                     weak: nil
+                     strong: "no",
+                     weak: "yes"
                    ],
                  temperature:
                    [
-                     low: nil,
-                     high: nil
+                     low: "yes",
+                     high: "no"
                    ]
                ]
 

@@ -12,6 +12,6 @@ defmodule GarphTest do
   end
 
   test "exports graph representation in dot format" do
-    assert Testmod.to_dot([a: [a1: :b], b: [b1: nil]]) == "digraph G {\n  subgraph cluster_a{\n    style = filled;\n    color = lightgrey;\n    node [style = filled, color = white, shape = rect];\n    node_a_a1 [label = a1];\n    node_a_label [label = a, color = \"#FFB347\"]\n  }\n  subgraph cluster_b{\n    style = filled;\n    color = lightgrey;\n    node [style = filled, color = white, shape = rect];\n    node_b_b1 [label = b1];\n    node_b_label [label = b, color = \"#FFB347\"]\n  }\n  node [shape = rect];\n  node_a_a1 -> node_b_label\n  node_b_b1 -> node_b_b1_end; node_b_b1_end [label = end];\n  start -> node_a_label\n  start [style = filled, color = \"#BDECB6\"];\n}"
+    assert Testmod.to_dot([a: [a1: :b], b: [b1: "description"]]) == "digraph G {\n  subgraph cluster_a{\n    style = filled;\n    color = lightgrey;\n    node [style = filled, color = white, shape = rect];\n    node_a_a1 [label = a1];\n    node_a_label [label = a, color = \"#FFB347\"]\n  }\n  subgraph cluster_b{\n    style = filled;\n    color = lightgrey;\n    node [style = filled, color = white, shape = rect];\n    node_b_b1 [label = b1];\n    node_b_label [label = b, color = \"#FFB347\"]\n  }\n  node [shape = rect];\n  node_a_a1 -> node_b_label\n  node_b_b1 -> node_b_b1_end; node_b_b1_end [label = \"description\"];\n  start -> node_a_label\n  start [style = filled, color = \"#BDECB6\"];\n}"
   end
 end

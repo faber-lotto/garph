@@ -27,11 +27,11 @@ defmodule Garph do
       defp connections(graph) do
         Enum.reduce(graph, [], fn({method, out_edges}, conns) ->
           conns ++ Enum.map(out_edges, fn({edge, dest}) -> 
-            if dest do
+            if is_atom(dest) do
               "  node_#{method}_#{edge} -> node_#{dest}_label"
             else
               end_node = "node_#{method}_#{edge}_end"
-              "  node_#{method}_#{edge} -> #{end_node}; #{end_node} [label = end];"
+              ~s(  node_#{method}_#{edge} -> #{end_node}; #{end_node} [label = "#{dest}"];)
             end
           end) 
         end)
