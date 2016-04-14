@@ -222,8 +222,6 @@ dot -Tpng play_tennis.dot > play_tennis.png
 
 Special thanks to:
 
-* Farhad Taebi
-
 ### Copyright and License
 
 Copyright (c) 2016, Faber Lotto GmbH.
