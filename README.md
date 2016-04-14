@@ -1,23 +1,14 @@
-## Garph
+## ![image](https://cdn.rawgit.com/faber-lotto/garph/master/logo.svg)  Garph
 
 _Graphical algorithm result processing helper_
 
-_LOGO_
-
-_short description_
-
-Implement  desicion trees usiing graphs.
+Garph is a simple way to implement complex decision trees by using graphs. It can be used with plain elixir or beneath a phoenix project.
 
 ### Features
 
-
-
-_blafoo_
-
-* Authorize function calls easily
-* Convention based syntax for clean and neat function definitions
-* More complex definitions and centralized authorization policies possible
-* Default policies, when no matching policy was found
+* Easy to use rule engine witten in plain elixir
+* Simplifies decision trees by breaking them down into single function calls.
+* Easy documentation of complex decision graphs through DOT file export.
 
 ### Installation
 
@@ -55,7 +46,7 @@ First we need to describe the graph itself, that should be used by garph to call
 ```
 defmodule Sports do
   import  Garph
-  
+
   @play_tennis [
                  outlook:
                    [
@@ -82,11 +73,11 @@ defmodule Sports do
 ```
 This will result in the following graph:
 
-![image](https://cdn.rawgit.com/ftaebi/garph/master/play_tennis.svg)
+![image](https://cdn.rawgit.com/faber-lotto/garph/master/play_tennis.svg)
 
 Please note, that there are two kinds of keys here. The keys on the first level represent the name of the functions wich may be called according to the graphs instructions. The first key is identical to the first function called, when walking the garph. In this case this would be the function _outlook()_.
 
-The second level keys represent the possible results of a certain function. If the value for that key is an atom _eg. :rainy_ and matches the result tuple coming from _outlook()_ , _eg. {:rainy, attributes}_, another function named _wind(*attributes)_ will be called. If the value is a string no further functions will be called and it will be just used as an informational tag, when the graph is plotted. 
+The second level keys represent the possible results of a certain function. If the value for that key is an atom _eg. :rainy_ and matches the result tuple coming from _outlook()_ , _eg. {:rainy, attributes}_, another function named _wind(*attributes)_ will be called. If the value is a string no further functions will be called and it will be just used as an informational tag, when the graph is plotted.
 
 #### Defining functions
 
@@ -105,7 +96,7 @@ end
 
 #### Results and attributes
 
-A function used by garph always needs to return a result tuple, wich allows garph to evaulate if it has reached the end of the graph, or if another function has to be called. The reult tuple also contains a list of parameters that will be when doing the latter. 
+A function used by garph always needs to return a result tuple, wich allows garph to evaulate if it has reached the end of the graph, or if another function has to be called. The reult tuple also contains a list of parameters that will be when doing the latter.
 
 ```
 ...
@@ -198,7 +189,7 @@ def play_tennis?(outlook, humidity, wind, temperature) do
 end
 ```
 
-Now we are able to ask the graph if we should play tennis just by calling 
+Now we are able to ask the graph if we should play tennis just by calling
 
 ```
 Sports.play_tennis?(outlook, humidity, wind, temperature)
@@ -215,7 +206,7 @@ def export_dot do
 end
 ```
 
-Running 
+Running
 
 ```
 Sports.export_dot()
