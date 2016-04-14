@@ -34,4 +34,17 @@ defmodule Garph.Mixfile do
   defp deps do
     []
   end
+
+  defp description do
+    """
+    Garph is a simple way to implement complex decision trees by using graphs. It can be used with plain elixir or beneath a phoenix project.
+    """
+  end
+
+  defp package do
+    [maintainers: ["Farhad Taebi", "Matthias Lindhorst"],
+     licenses: ["MIT"],
+     links: %{"GitHub" => "https://github.com/faber-lotto/garph"},
+     files: ~w(mix.exs README.md test lib)]
+  end
 end
