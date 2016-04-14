@@ -228,4 +228,4 @@ Special thanks to:
 
 Copyright (c) 2016, Faber Lotto GmbH.
 
-Garph source code is licensed under the [MIT License](https://github.com/faber-lotto/garph/blob/master/LICENSE.md).
+Garph source code is licensed under the [MIT License](https://github.com/faber-lotto/garph/blob/master/LICENSE).
